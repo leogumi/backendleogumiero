@@ -5,5 +5,8 @@
   },
   "scripts": {
     "start": "node server.js"
-  }
+  },
+  "express": "npm:Express@^3.0.1",
+  "Express": "^3.0.1",
+  "node": "^19.6.1"
 }
