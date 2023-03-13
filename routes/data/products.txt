@@ -1,0 +1,8 @@
+const newProduct = Product.addProduct({
+    title: "Spalding",
+    description: 'Pelota de cuero basket NBA',
+    price: 150,
+    thumbnail: './fotos/spaldingnba',
+    code: 'PelotaNba',
+    stock: 200
+})
