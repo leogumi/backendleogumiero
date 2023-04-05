@@ -19,7 +19,15 @@ io.on('connection', (socket) => {
     console.log('Usuario conectado');
 });
 
-http.listen( function () {
+const mongoose = require('mongoose');
+
+mongoose.connect('mongodb://localhost/ecommerce', {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+}).then(() => console.log('MongoDB connected'))
+    .catch((err) => console.log(err));
+
+http.listen(function () {
     console.log('Servidor iniciado en el puerto 8080');
 });
 

@@ -1,0 +1,1 @@
+mongodb + srv//leogumi:<password>@cluster0.vuhzhzi.mongodb.net/?retryWrites=true&w=majority
