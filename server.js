@@ -7,6 +7,12 @@ const exphbs = require('express-handlebars').create({
 });
 const io = require('socket.io')(http);
 
+// Ruta para mostrar el formulario de login
+app.get('/login', (req, res) => {
+    res.render('login');
+});
+
+
 // Configurar Handlebars como motor de vistas
 app.engine('.handlebars', exphbs.engine);
 app.set('view engine', '.handlebars');

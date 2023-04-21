@@ -1,6 +1,6 @@
 // Importar dependencias
 const express = require('express');
-const Pelota = require('../models/productos');
+const Pelota = require('../models/products');
 
 // Configurar las rutas
 const router = express.Router();
