@@ -5,6 +5,29 @@ const exphbs = require('express-handlebars').create({
     defaultLayout: 'main',
     extname: '.handlebars'
 });
+const bcrypt = require('bcrypt');
+
+app.post('/register', async (req, res) => {
+    const { name, email, password } = req.body;
+    const hashedPassword = await bcrypt.hash(password, 10);
+    // guardar datos del usuario en la base de datos
+    res.redirect('/login');
+});
+
+app.post('/login', (req, res) => {
+    const { email, password } = req.body;
+
+    if (email === 'admin@example.com' && password === 'adminpassword') {
+        req.session.user = { email, role: 'admin' };
+        return res.redirect('/admin');
+    }
+
+    // Buscar al usuario en la base de datos
+    // Si se encuentra, verificar que la contraseña coincida
+    // Si todo está bien, crear la sesión del usuario y redirigir a la página de productos
+    // Si algo falla, mostrar un mensaje de error y volver a la página de login
+});
+
 const io = require('socket.io')(http);
 
 // Ruta para mostrar el formulario de login
