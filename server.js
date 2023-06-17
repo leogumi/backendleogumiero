@@ -76,3 +76,13 @@ app.use('/pelotas', pelotasRouter);
 app.listen(PORT, () => {
     console.log(`Servidor iniciado en el puerto ${PORT}`);
 });
+// server.js
+
+const express = require('express');
+
+
+
+const mockingRouter = require('./routes/mocking');
+
+const errorHandler = require('./middlewares/errorHandler');
+app.use(errorHandler);
