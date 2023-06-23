@@ -85,4 +85,30 @@ const express = require('express');
 const mockingRouter = require('./routes/mocking');
 
 const errorHandler = require('./middlewares/errorHandler');
-app.use(errorHandler);
+app.use(errorHandler.js)
+
+
+const winston = require('winston');
+const { LOG_LEVELS } = require('./config');
+
+
+const developmentLogger = winston.createLogger({
+    level: 'debug',
+    transports: [
+        new winston.transports.Console(),
+    ],
+});
+
+
+
+const winston = require('winston');
+const { LOG_LEVELS } = require('./config');
+
+
+const productionLogger = winston.createLogger({
+    level: 'info',
+    transports: [
+        new winston.transports.Console(),
+        new winston.transports.File({ filename: 'errors.log', level: 'error' }),
+    ],
+});

@@ -8,5 +8,5 @@ mongoose.connect('mongodb://localhost/tienda_pelotas', {
 }).then(() => {
     console.log('Conexión exitosa con la base de datos');
 }).catch((error) => {
-    console.log('Error al conectar con la base de datos:', error);
+    developmentLogger.error('Este es un mensaje de error');
 });
