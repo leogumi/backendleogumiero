@@ -49,3 +49,16 @@ router.get('/current', passport.authenticate('jwt', { session: false }), async (
 });
 
 module.exports = router;
+
+
+router.post('/forgot-password', UserController.forgotPassword);
+router.get('/reset-password/:token', UserController.resetPassword);
+
+
+async function forgotPassword(req, res) {
+
+}
+
+async function resetPassword(req, res) {
+
+}

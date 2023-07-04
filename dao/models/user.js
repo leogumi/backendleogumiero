@@ -34,3 +34,11 @@ const UserSchema = new Schema({
 });
 
 module.exports = mongoose.model('User', UserSchema);
+
+
+router.put('/users/premium/:uid', UserController.changeUserRole);
+
+
+async function changeUserRole(req, res) {
+
+}

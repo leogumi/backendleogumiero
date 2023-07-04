@@ -10,3 +10,8 @@ const productSchema = new mongoose.Schema({
 
 module.exports = mongoose.model('Product', productSchema);
 
+
+const ProductSchema = new mongoose.Schema({
+    // ...
+    owner: { type: mongoose.Schema.Types.ObjectId, ref: 'User', default: 'admin' },
+});
