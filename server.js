@@ -112,3 +112,13 @@ const productionLogger = winston.createLogger({
         new winston.transports.File({ filename: 'errors.log', level: 'error' }),
     ],
 });
+
+const express = require('express');
+
+// ...
+
+// Importa el archivo swagger.js
+const configureSwagger = require('./swagger');
+configureSwagger(app);
+
+// ...
