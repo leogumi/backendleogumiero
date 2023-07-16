@@ -52,3 +52,45 @@ router.post('/:cid/purchase', async (req, res) => {
 });
 
 module.exports = router;
+
+/**
+ * @swagger
+ * /api/carts:
+ *   get:
+ *     summary: Obtiene el carrito de compras actual del usuario.
+ *     responses:
+ *       200:
+ *         description: OK
+ *   post:
+ *     summary: Agrega un producto al carrito de compras.
+ *     requestBody:
+ *       description: Producto a agregar al carrito.
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             $ref: '#/components/schemas/Product'
+ *     responses:
+ *       201:
+ *         description: Producto agregado al carrito correctamente.
+ *       400:
+ *         description: Error al agregar el producto al carrito.
+ *
+ * /api/carts/{id}:
+ *   delete:
+ *     summary: Elimina un producto del carrito de compras.
+ *     parameters:
+ *       - in: path
+ *         name: id
+ *         schema:
+ *           type: string
+ *         required: true
+ *         description: ID del producto a eliminar del carrito.
+ *     responses:
+ *       204:
+ *         description: Producto eliminado del carrito correctamente.
+ *       404:
+ *         description: Producto no encontrado en el carrito.
+ */
+
+
