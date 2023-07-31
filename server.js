@@ -22,28 +22,23 @@ app.post('/login', (req, res) => {
         return res.redirect('/admin');
     }
 
-    // Buscar al usuario en la base de datos
-    // Si se encuentra, verificar que la contraseña coincida
-    // Si todo está bien, crear la sesión del usuario y redirigir a la página de productos
-    // Si algo falla, mostrar un mensaje de error y volver a la página de login
+    
 });
 
 const io = require('socket.io')(http);
 
-// Ruta para mostrar el formulario de login
+
 app.get('/login', (req, res) => {
     res.render('login');
 });
 
 
-// Configurar Handlebars como motor de vistas
 app.engine('.handlebars', exphbs.engine);
 app.set('view engine', '.handlebars');
 
-// Establecer el directorio de vistas
+
 app.set('views', './views');
 
-// configuración de socket.io
 io.on('connection', (socket) => {
     console.log('Usuario conectado');
 });
@@ -122,3 +117,14 @@ const configureSwagger = require('./swagger');
 configureSwagger(app);
 
 // ...
+const express = require('express');
+
+const usersRouter = require('./routes/usersRouter');
+
+app.use(express.json());
+
+app.use('/api/users', usersRouter);
+
+app.listen(PORT, () => {
+  console.log(`Servidor iniciado en el puerto ${PORT}`);
+});
