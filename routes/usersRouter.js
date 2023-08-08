@@ -4,8 +4,6 @@ const usersController = require('../controllers/usersController');
 
 router.post('/premium/:uid', usersController.actualizarRolPremium);
 
-module.exports = router;
-
 const express = require('express');
 const usersController = require('../controllers/usersController');
 const uploadDocuments = require('../middlewares/uploadDocuments');
