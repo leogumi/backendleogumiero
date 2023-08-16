@@ -19,7 +19,7 @@ module.exports = {
             marca: "Spalding",
             modelo: "NBA Game Ball",
             precio: 149.99,
-            descripcion: "Pelota de baloncesto oficial de la NBA",
+            descripcion: "Pelota de basketball oficial de la NBA",
             imagen: "./fotos/spaldingnba.jpg"
         },
         // otros productos aquí

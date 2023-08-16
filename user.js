@@ -11,7 +11,7 @@ app.post('/login', (req, res) => {
     // Buscar al usuario en el objeto "users"
     const user = users.find(u => u.username === username && u.password === password);
 
-    // Si el usuario no existe o la contraseña es incorrecta, redirigir a la página de login con un mensaje de error
+    // Si el usuario no existe o la contraseña no es correcta, redirigir a la página de login con un mensaje de error
     if (!user) {
         res.render('login', { error: 'Nombre de usuario o contraseña incorrecta' });
         return;

@@ -52,7 +52,7 @@ mongoose.connect('mongodb://localhost/ecommerce', {
     .catch((err) => console.log(err));
 
 http.listen(function () {
-    console.log('Servidor iniciado en el puerto 8080');
+    console.log('Servidor iniciado en puerto 8080');
 });
 
 // Importar dependencias
